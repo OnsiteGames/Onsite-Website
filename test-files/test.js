@@ -2,7 +2,7 @@ const gamesUrl = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
 
 //creating each card to display the games
 const createGamesDisplay = (thumbnail, title) => {
-    const ul = document.querySelector("#catagList");
+    const ul = document.querySelector("#cardList");
     const li = document.createElement("li");
     const img = document.createElement("img");
     const h3 = document.createElement("h3");
@@ -22,7 +22,6 @@ const displayGame = async () => {
         const games = await gameRes.json();
         for(let i = 0; i < games.length; i ++){
             createGamesDisplay(games[i].thumbnail, games[i].title)
-            console.log(games)
         }
     } catch (error) {
         console.error(error);

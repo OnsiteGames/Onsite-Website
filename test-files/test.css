@@ -5,14 +5,63 @@ body {
     background-color: #3D348B;
 }
 
-.topnav input[type=text] {
+.topnav {
+    display: flex;
+    justify-content: space-between;
     padding: 6px;
     border: none;
     margin-top: 8px;
     margin-right: 16px;
-    font-size: 17px;
+    font-size: 20px;
   }
 
+#searchBar {
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+    height: 50px;
+    width: 500px;
+}
+
+#searchInput {
+    width: 400px;
+}
+
+#catagoryList {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+
+}
+
+.cataItem {
+    width: 120px;
+    margin: 20px 0px 20px 0px ;
+}
+
+#cataAndCards {
+    display: flex;
+}
+
+#cataTitle {
+    position: sticky;
+    top: 130px;
+}
+
+#listCata {
+    position: sticky;
+    top: 180px;
+    text-align: center;
+    padding: 0px;
+    margin: 0;
+}
+
+.cataItem {
+    font-size: 25px;
+    list-style: none;
+}
 
 #cardHeader{
     display: flex;
@@ -24,18 +73,13 @@ body {
     color: #F7B801;    
 }
 
-#catagList{
+#cardList{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-left: 200px;
-}
-
-.gameCards {
-    display: flex;
-    align-items: center;
-    margin: 20px;
+    margin-left: 0px;
+    padding:10px 20px 10px 0;
 }
 
 .img {
