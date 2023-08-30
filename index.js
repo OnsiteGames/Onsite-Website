@@ -1,4 +1,13 @@
 const gamesUrl = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'cb7c281af5mshed3ac801f114632p183454jsn726a4e5c6429',
+		'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+	}
+};
+
 let selectedGame = 0
 
 //creating each card to display the games
@@ -66,9 +75,6 @@ const showGame = (selection) => {
 
 }
 
-// const closeCard = () => {
-
-// }
 /* -------------------------------------------------------------------------- */
 
 const displayGame = async () => {
@@ -86,5 +92,3 @@ const displayGame = async () => {
 
 displayGame()  
 
-
-// module.exports = { selectedGame }
