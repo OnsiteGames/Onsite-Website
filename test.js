@@ -55,7 +55,6 @@ const showGame = (selection) => {
 //     card.append(img, h3, info, category, dev)
 }
 
-
 const gameInfo = async () => {
     try {
         const gameRes = await fetch(gamesUrl, options);
@@ -83,5 +82,11 @@ const displayGame = async () => {
 
 displayGame()  
 
+//catagories list
+const shooters = document.querySelector("#shot")
 
-// module.exports = { selectedGame }
+shooters.addEventListener("click", event => {
+    if (event.target.tagName === 'li') {
+        console.log(event.target.textContent)
+      }
+})

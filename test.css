@@ -2,7 +2,12 @@ body {
     border: 0;
     margin: 0;
     padding: 0;
-    background-color: #3D348B;
+    background-color: #080F0F;
+}
+
+h1 {
+    color: #F35B04;
+    margin-left: 10px;
 }
 
 .topnav {
@@ -33,6 +38,7 @@ body {
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 20px;
+    color: #F7B801;
 
 }
 
