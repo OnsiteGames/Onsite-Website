@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="test.css">
     <script src="apiKey.js"></script>
     <script src="test.js"></script>
@@ -19,7 +20,7 @@
     </div>
     <div id="cataAndCards">
         <div id="catagoryList">
-            <h2 id="cataTitle">Catagories</h2>
+            <h2 id="cataTitle">Categories</h2>
             <ul id="listCata">
                 <li class="cataItem">shooter</li>
                 <li class="cataItem">mmorpg</li>
@@ -34,12 +35,20 @@
             </ul>
         </div>
     
+        <dialog id="modal">
+            <form method="dialog" id="close">
+                <button>x</button>
+            </form>
+            <div id="gameInfo"></div>
+        </dialog>
     
         <div id="gameCards">
             <ul id="cardList">
     
             </ul>
         </div>
-    </div>
+
+        
+    </div>    
 </body>
 </html>
