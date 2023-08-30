@@ -9,19 +9,37 @@
     <script src="test.js"></script>
 </head>
 <body>
-    <div>
-        
-    </div>
     <div class="topnav">
-        <h1>NAME OF WEBSITE HERE</h1>
-        <input type="text" placeholder="Find a game!">
-        <button type="submit">SEARCH</button>
-    </div>
-    <div id="gameCards">
-        <h2 id="cardHeader">List of Free Games</h2>
-        <ul id="catagList">
+        <h1>ONSITE GAMES</h1>
+        <div id="searchBar">
+            <input type="text" placeholder="Find a game!" id="searchInput">
+            <button type="submit" id="searchButton">SEARCH</button>
+        </div>
 
-        </ul>
+    </div>
+    <div id="cataAndCards">
+        <div id="catagoryList">
+            <h2 id="cataTitle">Catagories</h2>
+            <ul id="listCata">
+                <li class="cataItem">shooter</li>
+                <li class="cataItem">mmorpg</li>
+                <li class="cataItem">strategy</li>
+                <li class="cataItem">moba</li>
+                <li class="cataItem">racing</li>
+                <li class="cataItem">sports</li>
+                <li class="cataItem">sandbox</li>
+                <li class="cataItem">survival</li>
+                <li class="cataItem">open-world</li>
+                <li class="cataItem">card</li>
+            </ul>
+        </div>
+    
+    
+        <div id="gameCards">
+            <ul id="cardList">
+    
+            </ul>
+        </div>
     </div>
 </body>
 </html>

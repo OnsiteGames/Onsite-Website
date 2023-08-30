@@ -3,8 +3,7 @@ let selectedGame = 0
 
 //creating each card to display the games
 const createGamesDisplay = (thumbnail, title, id) => {
-    const ul = document.querySelector("#catagList");
-
+    const ul = document.querySelector("#cardList");
     const li = document.createElement("li");
     const img = document.createElement("img");
     const h3 = document.createElement("h3");
