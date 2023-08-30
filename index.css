@@ -8,6 +8,7 @@ body {
 h1 {
     color: #F35B04;
     margin-left: 10px;
+    font-family: Arial, sans-serif;
 }
 
 .topnav {
@@ -32,43 +33,6 @@ h1 {
     width: 400px;
 }
 
-#catagoryList {
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 20px;
-    color: #F7B801;
-
-}
-
-.cataItem {
-    width: 120px;
-    margin: 20px 0px 20px 0px ;
-}
-
-#cataAndCards {
-    display: flex;
-}
-
-#cataTitle {
-    position: sticky;
-    top: 130px;
-}
-
-#listCata {
-    position: sticky;
-    top: 180px;
-    text-align: center;
-    padding: 0px;
-    margin: 0;
-}
-
-.cataItem {
-    font-size: 25px;
-    list-style: none;
-}
-
 #cardHeader{
     display: flex;
     justify-content: flex-end;
@@ -86,6 +50,7 @@ h1 {
     justify-content: space-evenly;
     margin-left: 0px;
     padding:10px 20px 10px 0;
+    font-family: Arial, sans-serif;
 }
 
 .img {
@@ -93,7 +58,7 @@ h1 {
 }
 
 .cardH3 {
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
     color: #F7B801;
     margin: 10px 20px 40px 20px

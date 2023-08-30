@@ -92,7 +92,53 @@ const displayGame = async () => {
 displayGame()  
 
 //catagories list
-const shooters = document.querySelector("#shot")
+// const shooters = document.querySelector('#shot');
+// const mmo = document.querySelector('#mmo')
+// const strat = document.querySelector('#strat')
+// const moba = document.querySelector('#moba')
+// const race = document.querySelector('#race')
+// const sport = document.querySelector('#sport')
+// const sandbox = document.querySelector('#sand')
+// const survival = document.querySelector('#survive')
+// const openW= document.querySelector('#open')
+// const card = document.querySelector('#card')
 
-shooters.addEventListener("click", event => {
-})
+// const getShooters = async () => {
+//     const
+// }
+
+// const getMmo = async () => {
+
+// }
+
+// const getStrat = async () => {
+    
+// }
+
+// const getMoba = async () => {
+    
+// }
+
+// const getRace = async () => {
+    
+// }
+
+// const getSport = async () => {
+    
+// }
+
+// const getSand = async () => {
+    
+// }
+
+// const getSurvival = async () => {
+    
+// }
+
+// const getOpen = async () => {
+    
+// }
+
+// const getCard = async () => {
+    
+// }
