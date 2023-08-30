@@ -86,7 +86,4 @@ displayGame()
 const shooters = document.querySelector("#shot")
 
 shooters.addEventListener("click", event => {
-    if (event.target.tagName === 'li') {
-        console.log(event.target.textContent)
-      }
 })
