@@ -10,7 +10,7 @@ const options = {
 
 let selectedGame = 0
 
-//creating each card to display the games
+/*-----------------creating each card to display the games------------------*/
 const createGamesDisplay = (thumbnail, title, id) => {
     const ul = document.querySelector("#cardList");
     const li = document.createElement("li");
@@ -75,8 +75,7 @@ const showGame = (selection) => {
 
 }
 
-/* -------------------------------------------------------------------------- */
-
+/* ---------------------------- Display all games --------------------------- */
 const displayGame = async () => {
     try {
         const gameRes = await fetch(gamesUrl, options);
