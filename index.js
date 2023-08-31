@@ -55,20 +55,22 @@ const showGame = (selection) => {
     const info = document.getElementById("gameInfo")
     info.innerHTML = ""
     const image = document.createElement("img");
-    const title = document.createElement("h1");
+    const title = document.createElement("h4");
     const description = document.createElement("p")
+
     const plat = document.createElement("p")
     const pub = document.createElement("p")
     const release = document.createElement("p")
-    
-    title.textContent = selection.title
+
     image.src = selection.thumbnail
-    description.textContent = selection.short_description
-    plat.textContent = selection.platform
-    pub.textContent = selection.publisher
-    release.textContent = selection.release_date
+    title.textContent = selection.title
+    description.textContent = `Description: ${selection.short_description}`
+    plat.textContent = `Platform: ${selection.platform}`
+    pub.textContent = `Publisher: ${selection.publisher}`
+    release.textContent = `Release date: ${selection.release_date}`
+
     
-    info.append(title, image, description, plat, pub, release)
+    info.append(image, title, description, plat, pub, release)
     
     card.showModal()
     console.log(card)
