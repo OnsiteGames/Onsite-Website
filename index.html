@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
 </head>
+
 <body>
     <div class="topnav">
         <h1>ONSITE GAMES</h1>
-        <div id="searchBar">
-            <input type="text" placeholder="Find a game!" id="searchInput">
-            <button type="submit" id="searchButton">SEARCH</button>
+
+        <!-- Search Stories -->
+        <div class="ui container segment">
+            <form id="spencers" class="ui form" aria-labelledby="form-head">
+                <h2 id="form-head">Search Stories</h2>
+                <div class="field">
+                    <label for="search">Search Articles</label>
+                    <input id="search" type="text" name="search" placeholder="Search Term">
+                </div>
+                <button class="ui button" type="submit">Search</button>
+            </form>
+            <ul id="search-results">
+                <!-- Your Search Results should go here in this ul #search-results -->
+            </ul>
         </div>
 
+        <!-- <div id="searchBar">
+            <input type="text" placeholder="Find a game!" id="searchInput">
+            <button type="submit" id="searchButton">SEARCH</button>
+        </div> -->
+        <div id="getGenresBtn">Genres</div>
     </div>
 
     <dialog id="modal">
@@ -26,9 +44,10 @@
 
     <div id="gameCards">
         <ul id="cardList">
-    
+
         </ul>
     </div>
 
 </body>
+
 </html>
