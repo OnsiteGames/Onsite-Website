@@ -12,33 +12,21 @@
 <body>
     <div class="topnav">
         <h1>ONSITE GAMES</h1>
-
-        <!-- Search Stories -->
-        <div class="ui container segment">
-            <form id="spencers" class="ui form" aria-labelledby="form-head">
-                <h2 id="form-head">Search Stories</h2>
-                <div class="field">
-                    <label for="search">Search Articles</label>
-                    <input id="search" type="text" name="search" placeholder="Search Term">
-                </div>
-                <button class="ui button" type="submit">Search</button>
-            </form>
-            <ul id="search-results">
-                <!-- Your Search Results should go here in this ul #search-results -->
-            </ul>
+    <div id="cateBar">
+        <div id="categoryList">
+            <div class="genreButton">Shooter</div>
+            <div class="genreButton">Strategy</div>
+            <div class="genreButton">Racing</div>
+            <div class="genreButton">Sports</div>
         </div>
-
-        <!-- <div id="searchBar">
-            <input type="text" placeholder="Find a game!" id="searchInput">
-            <button type="submit" id="searchButton">SEARCH</button>
-        </div> -->
+            <form id="spencers" class="ui form" aria-labelledby="form-head">
+                <div class="field">
+                    <input id="search" type="text" name="search" placeholder="Find a Game!">
+                </div>
+                <button class="uiButton" type="submit">Search</button>
+            </form>
     </div>
-
-    <!-- <div id="getGenres"></div> -->
-    <div id="getGenresBtn">Shooter</div>
-    <div id="getGenresBtn">Strategy</div>
-    <div id="getGenresBtn">Racing</div>
-    <div id="getGenresBtn">Sports</div>
+    </div>
 
     <dialog id="modal">
         <form method="dialog" id="close">

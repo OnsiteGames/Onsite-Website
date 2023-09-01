@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
-    color: #F35B04;
+    color: #f25b19;
     margin-left: 10px;
     font-family: Arial, sans-serif;
 }
@@ -21,7 +21,7 @@ h1 {
     font-size: 20px;
   }
 
-#searchBar {
+#spencers {
     display: flex;
     justify-content: right;
     margin-top: 20px;
@@ -30,19 +30,50 @@ h1 {
     padding: 0px;
 }
 
-#searchInput {
+#search {
     width: 400px;
+    height: 45px;
     background-color: #3B3B3B;
     border-color: #3B3B3B;
+    color: white;
+    font-size: 20px;
+    padding-left: 15px;
 }
-#searchButton {
+.uiButton {
     background-color: #6B6B6B;
     border-color: #6B6B6B;
-    height: 52px;
+    height: 50px;
+    margin-top: 2px;
+}
+
+#categoryList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    width: 500px;
+
+}
+
+#categoryList :hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#cateBar {
+    display: flex;
+
+}
+
+.genreButton {
+    color: #f25b19;
 }
 
 #modal {
     width: 800px;
+    background-color: #080F0F;
+    color: white;
 }
 
 #gameInfo {
@@ -58,7 +89,6 @@ h4 {
     margin: 0;
     margin-bottom: 10px;
 }
-
 
 p {
     display: flex;
@@ -99,4 +129,5 @@ p {
 
 .gameCard :hover {
     transform: scale(1.1);
+    cursor: pointer;
 }

@@ -1,12 +1,6 @@
 const gamesUrl = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
 const display = document.querySelector("#cardList");
 let selectedCategory
-// let searchTerm;
-
-// const genresUrl = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${selectedCategory}`
-
-// let categories = ['mmorpg', ' shooter', ' strategy', ' moba', ' racing', ' sports', ' social', ' sandbox', ' open-world', ' survival', ' pvp', ' pve', ' pixel', ' voxel', ' zombie', ' turn-based', ' first-person', ' third-Person', ' top-down', ' tank', ' space', ' sailing', ' side-scroller', ' superhero', ' permadeath', ' card', ' battle-royale', ' mmo', ' mmofps', ' mmotps', ' 3d', ' 2d', ' anime', ' fantasy', ' sci-fi', ' fighting', ' action-rpg', ' action', ' military', ' martial-arts', ' flight', ' low-spec', ' tower-defense', ' horror', ' mmorts']
-// let categories = ['mmorpg', ' shooter', ' strategy']
 
 const options = {
     method: 'GET',
@@ -86,30 +80,14 @@ const showGame = (selection) => {
 
 
 /* --------------------------- Clicking on Genres --------------------------- */
-// const createGenreDisplay = async (cat) => {
-//     const genreBar = document.getElementById("getGenres")
-
-//     const genreOption = document.createElement("div")
-
-//     genreOption.id = "getGenresBtn"
-//     genreOption.textContent = cat
-
-//     genreBar.append(genreOption)
-//     // console.log(genreOption)
-// }
-
-
 const selectGenre = () => {
-    let cats = Array.from(document.querySelectorAll("#getGenresBtn"))
+    let cats = Array.from(document.querySelectorAll(".genreButton"))
     cats.forEach(genre => {
         genre.addEventListener("click", () => {
             selectedCategory = genre.textContent
-            // console.log(selectedCategory)
             genreInfo(selectedCategory)
         })
-        // console.log(genre)
     })
-    // console.log(cats)
 }
 
 const genreInfo = async (choice) => {
@@ -119,7 +97,6 @@ const genreInfo = async (choice) => {
         display.innerHTML = ""
         console.log(genres)
         genres.forEach(game => {
-            // console.log(game)
             createGamesDisplay(game.thumbnail, game.title, game.id)
         })
     } catch (error) {
@@ -170,7 +147,6 @@ const displayGame = async () => {
         const gameRes = await fetch(gamesUrl, options);
         const games = await gameRes.json();
         games.forEach(game => { createGamesDisplay(game.thumbnail, game.title, game.id) })
-        // categories.forEach(category => { createGenreDisplay(category) })
         selectGenre()
         selectGame()
         selectGenre()
