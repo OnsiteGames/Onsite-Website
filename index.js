@@ -1,10 +1,12 @@
 const gamesUrl = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+const display = document.querySelector("#cardList");
 let selectedCategory
 // let searchTerm;
 
 // const genresUrl = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${selectedCategory}`
 
-// let genres = "mmorpg, shooter, strategy, moba, racing, sports, social, sandbox, open-world, survival, pvp, pve, pixel, voxel, zombie, turn-based, first-person, third-Person, top-down, tank, space, sailing, side-scroller, superhero, permadeath, card, battle-royale, mmo, mmofps, mmotps, 3d, 2d, anime, fantasy, sci-fi, fighting, action-rpg, action, military, martial-arts, flight, low-spec, tower-defense, horror, mmorts"
+// let categories = ['mmorpg', ' shooter', ' strategy', ' moba', ' racing', ' sports', ' social', ' sandbox', ' open-world', ' survival', ' pvp', ' pve', ' pixel', ' voxel', ' zombie', ' turn-based', ' first-person', ' third-Person', ' top-down', ' tank', ' space', ' sailing', ' side-scroller', ' superhero', ' permadeath', ' card', ' battle-royale', ' mmo', ' mmofps', ' mmotps', ' 3d', ' 2d', ' anime', ' fantasy', ' sci-fi', ' fighting', ' action-rpg', ' action', ' military', ' martial-arts', ' flight', ' low-spec', ' tower-defense', ' horror', ' mmorts']
+let categories = ['mmorpg', ' shooter', ' strategy']
 
 const options = {
     method: 'GET',
@@ -75,39 +77,55 @@ const showGame = (selection) => {
     pub.textContent = `Publisher: ${selection.publisher}`
     release.textContent = `Release date: ${selection.release_date}`
 
-    
+
     info.append(image, title, description, plat, pub, release)
-    
+
     card.showModal()
 
 }
 
 
 /* --------------------------- Clicking on Genres --------------------------- */
-// const selectGenre = () => {
-//     let genres = document.getElementById("getGenresBtn")
-//     genres.addEventListener("click", (e) => {
-//         selectedCategory = "mmorpg"
-//         console.log(selectedCategory)
-//         genreInfo()
-//     })
-// }
+const createGenreDisplay = async (cat) => {
+    const genreBar = document.getElementById("getGenres")
 
-// const genreInfo = async () => {
-//     try {
-//         const genresRes = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${selectedCategory}`, options);
-//         const genres = await genresRes.json();
-//         for(let i = 0; i < genres.length; i ++){
-//             // console.log(genresUrl)
-//             console.log(genres)
-//         }
-//         // const selected =  genres.filter(game => game.id === selectedGame)
-//         // showGame(selected[0])
-//         // console.log("a genre")
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
+    const genreOption = document.createElement("div")
+
+    genreOption.id = "getGenresBtn"
+    genreOption.textContent = cat
+
+    genreBar.append(genreOption)
+    // console.log(genreOption)
+}
+
+
+const selectGenre = () => {
+    let cats = Array.from(document.querySelectorAll("#getGenresBtn"))
+    cats.forEach(genre => {
+        genre.addEventListener("click", () => {
+            selectedCategory = genre.textContent
+            // console.log(selectedCategory)
+            genreInfo(selectedCategory)
+        })
+        // console.log(genre)
+    })
+    // console.log(cats)
+}
+
+const genreInfo = async (choice) => {
+    try {
+        const genresRes = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${choice}`, options);
+        const genres = await genresRes.json();
+        display.innerHTML = ""
+        console.log(genres)
+        // genres.forEach(game => {
+        //     console.log(game)
+        //     // createGamesDisplay(game.thumbnail, game.title, game.id)
+        // })
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 /* ------------------------------- Search Bar ------------------------------- */
 let searchUl
@@ -123,12 +141,10 @@ const createSearchStories = (title, articleURL) => {
 }
 
 let searchTerm;
-const display = document.querySelector("#cardList");
 
 document.getElementById("spencers").addEventListener("submit", async (e) => {
     e.preventDefault()
     searchTerm = e.target[0].value
-    // console.log(`The Search Stories form has been submitted with search term: "${searchTerm}"`)
     searchStories(`${searchTerm}`)
     display.innerHTML = ""
 })
@@ -153,11 +169,10 @@ const displayGame = async () => {
     try {
         const gameRes = await fetch(gamesUrl, options);
         const games = await gameRes.json();
-        for (let i = 0; i < games.length; i++) {
-            createGamesDisplay(games[i].thumbnail, games[i].title, games[i].id)
-        }
+        games.forEach(game => { createGamesDisplay(game.thumbnail, game.title, game.id) })
+        categories.forEach(category => { createGenreDisplay(category) })
         selectGame()
-        // selectGenre()
+        selectGenre()
     } catch (error) {
         console.error(error);
     }
