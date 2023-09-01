@@ -95,10 +95,11 @@ const genreInfo = async (choice) => {
         const genresRes = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${choice}`, options);
         const genres = await genresRes.json();
         display.innerHTML = ""
-        console.log(genres)
+        // console.log(genres)
         genres.forEach(game => {
             createGamesDisplay(game.thumbnail, game.title, game.id)
         })
+        selectGame()
     } catch (error) {
         console.error(error);
     }
@@ -149,7 +150,6 @@ const displayGame = async () => {
         games.forEach(game => { createGamesDisplay(game.thumbnail, game.title, game.id) })
         selectGenre()
         selectGame()
-        selectGenre()
     } catch (error) {
         console.error(error);
     }
